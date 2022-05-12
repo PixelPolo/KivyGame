@@ -1,0 +1,48 @@
+
+<MenuLayout>:
+    canvas.before:
+        Color:
+            rgba: 60/255, 180/255, 250/255, .8
+        Rectangle:
+            size: self.size
+            pos: self.pos
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            source: "images/beach.png"
+            size: self.size
+            pos: self.pos
+
+    Label:
+        font_name: "fonts/consolas.ttf"
+        font_size: dp(40)
+        text: "< Paper Boat Game >"
+        size_hint: .2, .2
+        pos: root.center_x - self.width / 2, root.center_y + self.height / 2
+
+    Boat:
+        pos: root.center_x - self.width / 2, self.height / 2
+
+    Cloud:
+        pos: root.center_x - self.width / 2, root.height - self.height
+
+
+<Boat@Widget>:
+    size_hint: .3, .3
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            source: "images/PaperBoat.png"
+            size: self.size
+            pos: self.pos
+
+<Cloud@Widget>:
+    size_hint: .2, .25
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            source: "images/Cloud.png"
+            size: self.size
+            pos: self.pos

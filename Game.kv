@@ -1,0 +1,36 @@
+#: import MenuLayout Menu
+#: import Stage1 Stage1
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+
+MainGame:
+    Screen:
+        name: "Menu"
+        MenuLayout:
+        Button:
+            text: "Play"
+            background_color: 0, 0, 1, 1
+            font_name: "fonts/consolas.ttf"
+            font_size: dp(20)
+            size_hint: .15, .07
+            pos: root.center_x - self.width / 2, root.center_y + self.height
+            on_press:
+                root.transition = FadeTransition()
+                root.current = "Niveau1"
+
+
+    Screen:
+        name: "Niveau1"
+        Stage1:
+            Button:
+                text: "Menu"
+                background_color: 0, 0, 1, 1
+                font_name: "fonts/consolas.ttf"
+                font_size: dp(15)
+                size_hint: .15, .05
+                pos: 0, root.height - self.height
+                on_press:
+                    root.transition = FadeTransition()
+                    root.current = "Menu"
+                    # self.parent.game_over()
+
+

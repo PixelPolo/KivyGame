@@ -1,0 +1,61 @@
+
+<Stage1>:
+    canvas.before:
+        Color:
+            rgba: 60/255, 180/255, 250/255, .8
+        Rectangle:
+            size: self.size
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            size: self.width, self.height
+            pos: root.x, root.y - self.height / 3
+            source: "images/bgofgame.png"
+
+    Label:
+        id: scorelabel
+        font_name: "fonts/consolas.ttf"
+        font_size: dp(15)
+        text: root.scoretext
+        size_hint: .2, .05
+        pos: root.width - self.width, root.height - self.height
+
+    Button:
+        id: startbutton
+        text: "Start"
+        background_color: 0, 0, 1, 1
+        font_name: "fonts/consolas.ttf"
+        font_size: dp(20)
+        size_hint: .15, .07
+        pos: root.center_x - self.width / 2, root.center_y - self.height
+        on_press: root.on_press_startbutton()
+
+<BoatWidget>:
+    size_hint: .15, .15
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            source: "images/PaperBoat.png"
+            size: self.size
+            pos: self.pos
+
+<CloudWidget>:
+    size_hint: .15, .2
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            source: "images/Cloud.png"
+            size: self.size
+            pos: self.pos
+
+<DropWidget>:
+    size_hint: 1/40, 1/20
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1
+        Rectangle:
+            source: "images/Drop.png"
+            size: self.size
+            pos: self.pos
