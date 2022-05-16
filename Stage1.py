@@ -43,7 +43,7 @@ class Stage1(RelativeLayout):
 
     cloud = None
     counter = 0
-    cloud_speed = 120  # 30 = 2 times faster
+    cloud_speed = 120  # 60 = 2 times faster
     cloud_alt = 0.75  # * self.height
 
     drop = None
