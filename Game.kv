@@ -16,7 +16,8 @@ MainGame:
             on_press:
                 root.transition = FadeTransition()
                 root.current = "Niveau1"
-
+                root.game_sound.stop()
+                root.stage_sound.play()
 
     Screen:
         name: "Niveau1"
@@ -27,10 +28,10 @@ MainGame:
                 font_name: "fonts/consolas.ttf"
                 font_size: dp(15)
                 size_hint: .15, .05
-                pos: 0, root.height - self.height
+                pos: dp(5), root.height - (self.height + dp(5))
                 on_press:
                     root.transition = FadeTransition()
                     root.current = "Menu"
-                    # self.parent.game_over()
-
-
+                    root.stage_sound.stop()
+                    root.game_sound.play()
+                    self.parent.game_over()
