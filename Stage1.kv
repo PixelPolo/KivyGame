@@ -6,11 +6,12 @@
         Rectangle:
             size: self.size
         Color:
-            rgba: 1, 1, 1, .5
+            rgba: 1, 1, 1, 1
         Rectangle:
             size: self.width, self.height
             # pos: root.x, root.y - self.height / 3
-            source: "images/bgofgame.png"
+            source: "images/background.jpg"
+
 
     Label:
         id: scorelabel
@@ -29,6 +30,7 @@
         size_hint: .15, .07
         pos: root.center_x - self.width / 2, root.center_y - self.height
         on_press: root.on_press_startbutton()
+
 
 <BoatWidget>:
     size_hint: .10, .10
